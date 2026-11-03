@@ -1,8 +1,28 @@
-
 (() => {
   const form = document.getElementById("applicationForm");
   const submitButton = document.getElementById("submitButton");
   const message = document.getElementById("formMessage");
+
+  const optionalLinkFields = [
+    form.elements.eliteProspectsLink,
+    form.elements.videoHighlightsLink
+  ];
+
+  function addDefaultProtocol(input) {
+    const value = input.value.trim();
+    if (!value) return;
+    // Accept www.example.com or example.com and normalize it to a valid URL.
+    if (!/^[a-zA-Z][a-zA-Z0-9+.-]*:\/\//.test(value)) {
+      input.value = `https://${value}`;
+    }
+  }
+
+  optionalLinkFields.forEach((input) => {
+    input.addEventListener("blur", () => {
+      addDefaultProtocol(input);
+      input.setCustomValidity("");
+    });
+  });
 
   function showMessage(text, type) {
     message.textContent = text;
@@ -12,6 +32,7 @@
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     message.className = "form-message";
+    optionalLinkFields.forEach(addDefaultProtocol);
     if (!form.reportValidity()) return;
 
     const endpoint = window.SPRING_HOCKEY_CONFIG?.GOOGLE_SCRIPT_URL || "";
