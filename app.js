@@ -1,4 +1,3 @@
-
 (() => {
   const form = document.getElementById("applicationForm");
   const submitButton = document.getElementById("submitButton");
