@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101317">
+  <title>Spring Hockey Application</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="config.js"></script>
+</head>
+<body>
+  <div class="top-rule"></div>
+  <main class="page-shell">
+    <header class="hero">
+      <div class="brand-mark">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjk3Mynn0LnU4k9UBtuohrrAx1cBbKaV9nY_l9XpGWiw&s=10"
+             alt="Team logo" onerror="this.style.display='none';">
+      </div>
+      <div class="eyebrow">PLAYER REGISTRATION</div>
+      <h1>SPRING HOCKEY<br><span>APPLICATION</span></h1>
+      <p class="hero-copy">Take the next step. Tell us about the player and how to reach your family.</p>
+      <div class="season-tag"><span class="season-dot"></span> PLAYER INTEREST & APPLICATION FORM</div>
+    </header>
+
+    <section class="form-card" aria-labelledby="form-title">
+      <div class="form-heading">
+        <div>
+          <div class="section-kicker">GET STARTED</div>
+          <h2 id="form-title">Player information</h2>
+        </div>
+        <div class="required-note"><span>*</span> Required fields</div>
+      </div>
+
+      <form id="applicationForm">
+        <div class="form-section">
+          <h3><span class="section-number">01</span> PLAYER DETAILS</h3>
+          <div class="field-grid">
+            <label class="field full">
+              <span>Player Name <b>*</b></span>
+              <input name="playerName" autocomplete="name" placeholder="First and last name" required maxlength="100">
+            </label>
+            <label class="field">
+              <span>Birth Year <b>*</b></span>
+              <select name="birthYear" required>
+                <option value="">Select birth year</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Position <b>*</b></span>
+              <select name="position" required>
+                <option value="">Select position</option>
+                <option>Forward</option>
+                <option>Defense</option>
+                <option>Goalie</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Height</span>
+              <input name="height" placeholder="e.g. 5'10&quot;" maxlength="20">
+            </label>
+            <label class="field">
+              <span>Weight</span>
+              <div class="input-with-suffix">
+                <input name="weight" inputmode="numeric" placeholder="e.g. 165" maxlength="4">
+                <span>lbs</span>
+              </div>
+            </label>
+            <label class="field">
+              <span>Player Type <b>*</b></span>
+              <select name="playerType" required>
+                <option value="">Select player type</option>
+                <option>AAA</option>
+                <option>AA</option>
+                <option>A</option>
+                <option>High School</option>
+                <option>Prep</option>
+                <option>Junior</option>
+                <option>House / Recreational</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Current Team <b>*</b></span>
+              <input name="currentTeam" placeholder="Current team name" required maxlength="120">
+            </label>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h3><span class="section-number">02</span> PARENT / GUARDIAN CONTACT</h3>
+          <div class="field-grid">
+            <label class="field full">
+              <span>Parent Name <b>*</b></span>
+              <input name="parentName" autocomplete="name" placeholder="Parent or guardian full name" required maxlength="100">
+            </label>
+            <label class="field">
+              <span>Phone Number <b>*</b></span>
+              <input name="phone" type="tel" autocomplete="tel" placeholder="(555) 555-5555" required maxlength="30">
+            </label>
+            <label class="field">
+              <span>Email <b>*</b></span>
+              <input name="email" type="email" autocomplete="email" placeholder="you@example.com" required maxlength="150">
+            </label>
+          </div>
+        </div>
+
+        <div class="form-section last-section">
+          <h3><span class="section-number">03</span> LOCATION</h3>
+          <div class="field-grid">
+            <label class="field">
+              <span>City <b>*</b></span>
+              <input name="city" autocomplete="address-level2" placeholder="City" required maxlength="80">
+            </label>
+            <label class="field">
+              <span>State <b>*</b></span>
+              <select name="state" autocomplete="address-level1" required>
+                <option value="">Select state</option>
+                <option value="AL">Alabama</option><option value="AK">Alaska</option><option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option><option value="CA">California</option><option value="CO">Colorado</option>
+                <option value="CT">Connecticut</option><option value="DE">Delaware</option><option value="FL">Florida</option>
+                <option value="GA">Georgia</option><option value="HI">Hawaii</option><option value="ID">Idaho</option>
+                <option value="IL">Illinois</option><option value="IN">Indiana</option><option value="IA">Iowa</option>
+                <option value="KS">Kansas</option><option value="KY">Kentucky</option><option value="LA">Louisiana</option>
+                <option value="ME">Maine</option><option value="MD">Maryland</option><option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option><option value="MN">Minnesota</option><option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option><option value="MT">Montana</option><option value="NE">Nebraska</option>
+                <option value="NV">Nevada</option><option value="NH">New Hampshire</option><option value="NJ">New Jersey</option>
+                <option value="NM">New Mexico</option><option value="NY">New York</option><option value="NC">North Carolina</option>
+                <option value="ND">North Dakota</option><option value="OH">Ohio</option><option value="OK">Oklahoma</option>
+                <option value="OR">Oregon</option><option value="PA">Pennsylvania</option><option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option><option value="SD">South Dakota</option><option value="TN">Tennessee</option>
+                <option value="TX">Texas</option><option value="UT">Utah</option><option value="VT">Vermont</option>
+                <option value="VA">Virginia</option><option value="WA">Washington</option><option value="WV">West Virginia</option>
+                <option value="WI">Wisconsin</option><option value="WY">Wyoming</option>
+                <option value="DC">District of Columbia</option>
+                <option value="Other">Other / Outside U.S.</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <!-- Honeypot anti-spam field. Real applicants should leave this blank. -->
+        <div class="trap" aria-hidden="true">
+          <label>Company <input name="companyWebsite" tabindex="-1" autocomplete="off"></label>
+        </div>
+
+        <div class="form-footer">
+          <p>Your information will be used by the hockey program to review this application and contact your family.</p>
+          <button id="submitButton" type="submit"><span>SUBMIT APPLICATION</span><span class="button-arrow">→</span></button>
+          <div id="formMessage" class="form-message" role="status" aria-live="polite"></div>
+          <div class="secure-note"><span class="lock">◆</span> Please submit one application per player.</div>
+        </div>
+      </form>
+    </section>
+    <footer>SPRING HOCKEY APPLICATION <span>•</span> THANK YOU FOR YOUR INTEREST</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
